@@ -11,6 +11,13 @@
 #import "BGCCNetWorkManager.h"
 #import "PathViewController.h"
 
+BOOL isLightDevice(){
+    if(SW < 375) {
+        return YES;
+    }
+    return NO;
+}
+
 @interface HomeViewController ()
 {
     NSArray *arrPackage;
@@ -58,11 +65,15 @@
     for(int i=0;i<arrPackage.count;i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(lengthPerButton*(i%countPerRow*2+1), header + i/countPerRow*(distancePerRow+30), lengthPerButton, 30);
-        button.backgroundColor = HEX_RGB(0x123456);
+        button.backgroundColor = HEX_RGB(0x345678);
         [button setTitleColor:HEX_RGB(0xffffff) forState:UIControlStateNormal];
-        [button setTitleColor:HEX_RGB(0x00ffff) forState:UIControlStateSelected];
+        [button setTitleColor:HEX_RGB(0x000000) forState:UIControlStateSelected];
         [button setTitle:arrPackage[i][@"packageName"] forState:UIControlStateNormal];
-        button.titleLabel.font = iFont(kFontName_PF_M, 12);
+        if(isLightDevice()) {
+            button.titleLabel.font = iFont(kFontName_PF_M, 10);
+        }else {
+            button.titleLabel.font = iFont(kFontName_PF_M, 12);
+        }
         button.tag = i;
         [button addTarget:self action:@selector(selectPackage:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
@@ -87,7 +98,7 @@
     }];
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.backgroundColor = HEX_RGB(0x999999);
+    button.backgroundColor = HEX_RGB(0x345678);
     [button setTitleColor:HEX_RGB(0xffffff) forState:UIControlStateNormal];
     [button setTitle:@"查询" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(searchPackage) forControlEvents:UIControlEventTouchUpInside];
@@ -145,6 +156,7 @@
         _tfPackageNumber = [[UITextField alloc] init];
         _tfPackageNumber.placeholder = @"请输入单号";
         _tfPackageNumber.keyboardType = UIKeyboardTypeNumberPad;
+        _tfPackageNumber.textColor = HEX_RGB(0x999999);
     }
     return _tfPackageNumber;
 }
