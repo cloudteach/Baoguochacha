@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  Baoguochacha
+//
+//  Created by tiny on 2017/9/18.
+//  Copyright © 2017年 tiny. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "Common.h"
+
+#endif /* PrefixHeader_pch */
