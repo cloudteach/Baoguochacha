@@ -22,6 +22,9 @@
 		2A4E29241F6F6D8100F208BF /* MBProgressHUD+NJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E29201F6F6D8100F208BF /* MBProgressHUD+NJ.m */; };
 		2A4E29251F6F6D8100F208BF /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A4E29211F6F6D8100F208BF /* MBProgressHUD.bundle */; };
 		2A4E29261F6F6D8100F208BF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E29231F6F6D8100F208BF /* MBProgressHUD.m */; };
+		2A4E29291F6F7ABF00F208BF /* SuperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E29281F6F7ABF00F208BF /* SuperModel.m */; };
+		2A4E292C1F6F7ADC00F208BF /* PackageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E292B1F6F7ADC00F208BF /* PackageModel.m */; };
+		2A4E292F1F6F91A000F208BF /* PathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E292E1F6F91A000F208BF /* PathViewController.m */; };
 		3FD2AC8B02341FD9E8DC7F8A /* libPods-Baoguochacha.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ABFCC7C4D8D6387DAB4C29 /* libPods-Baoguochacha.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,12 @@
 		2A4E29211F6F6D8100F208BF /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		2A4E29221F6F6D8100F208BF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2A4E29231F6F6D8100F208BF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2A4E29271F6F7ABF00F208BF /* SuperModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperModel.h; sourceTree = "<group>"; };
+		2A4E29281F6F7ABF00F208BF /* SuperModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperModel.m; sourceTree = "<group>"; };
+		2A4E292A1F6F7ADC00F208BF /* PackageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageModel.h; sourceTree = "<group>"; };
+		2A4E292B1F6F7ADC00F208BF /* PackageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageModel.m; sourceTree = "<group>"; };
+		2A4E292D1F6F91A000F208BF /* PathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathViewController.h; sourceTree = "<group>"; };
+		2A4E292E1F6F91A000F208BF /* PathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathViewController.m; sourceTree = "<group>"; };
 		9AE767E23395DD99896C4346 /* Pods-Baoguochacha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baoguochacha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Baoguochacha/Pods-Baoguochacha.release.xcconfig"; sourceTree = "<group>"; };
 		B0ABFCC7C4D8D6387DAB4C29 /* libPods-Baoguochacha.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Baoguochacha.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1717CEF6079F8A50FA9ADCE /* Pods-Baoguochacha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Baoguochacha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Baoguochacha/Pods-Baoguochacha.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,10 +117,16 @@
 				2A4E28F91F6F588A00F208BF /* ViewController.m */,
 				2A4E291B1F6F6C6000F208BF /* HomeViewController.h */,
 				2A4E291C1F6F6C6000F208BF /* HomeViewController.m */,
+				2A4E292D1F6F91A000F208BF /* PathViewController.h */,
+				2A4E292E1F6F91A000F208BF /* PathViewController.m */,
+				2A4E292A1F6F7ADC00F208BF /* PackageModel.h */,
+				2A4E292B1F6F7ADC00F208BF /* PackageModel.m */,
 				2A4E290C1F6F61D700F208BF /* Common.h */,
 				2A4E290D1F6F620200F208BF /* PrefixHeader.pch */,
 				2A4E29151F6F65E900F208BF /* SuperManager.h */,
 				2A4E29161F6F65E900F208BF /* SuperManager.m */,
+				2A4E29271F6F7ABF00F208BF /* SuperModel.h */,
+				2A4E29281F6F7ABF00F208BF /* SuperModel.m */,
 				2A4E29181F6F6C4100F208BF /* SuperViewController.h */,
 				2A4E29191F6F6C4100F208BF /* SuperViewController.m */,
 				2A4E29091F6F5F9800F208BF /* BGCCNetWorkManager.h */,
@@ -295,6 +310,9 @@
 				2A4E29171F6F65E900F208BF /* SuperManager.m in Sources */,
 				2A4E29241F6F6D8100F208BF /* MBProgressHUD+NJ.m in Sources */,
 				2A4E29141F6F62B700F208BF /* UIView+Additions.m in Sources */,
+				2A4E29291F6F7ABF00F208BF /* SuperModel.m in Sources */,
+				2A4E292C1F6F7ADC00F208BF /* PackageModel.m in Sources */,
+				2A4E292F1F6F91A000F208BF /* PathViewController.m in Sources */,
 				2A4E28FA1F6F588A00F208BF /* ViewController.m in Sources */,
 				2A4E29261F6F6D8100F208BF /* MBProgressHUD.m in Sources */,
 				2A4E29131F6F62B700F208BF /* UIColor+Theme.m in Sources */,

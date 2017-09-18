@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SuperManager.h"
 
 @interface BGCCNetWorkManager : NSObject
-
++ (BGCCNetWorkManager *)manager;
+- (void)getEMSWithParam:(NSDictionary *)param success:(RequestSuccessBlock)success failed:(RequestFailedBlock)failed;
 @end

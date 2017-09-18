@@ -45,4 +45,6 @@
 
 - (void)hideHUD;
 - (void)hideHUDForView:(UIView *)view;
+
+- (NSString *)dictionaryOrArrayToJsonString:(id)dictOrArray;
 @end

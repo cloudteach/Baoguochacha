@@ -23,8 +23,7 @@ static SuperManager *manager = nil;
     [manager GET:url parameters:param progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"");
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *json = [self dictionaryOrArrayToJsonString:responseObject];
-        success(@{@"json":json});
+        success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failed(error);
     }];
@@ -34,18 +33,10 @@ static SuperManager *manager = nil;
     [manager POST:url parameters:param progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        success(@{@"result":responseObject});
+        success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failed(error);
     }];
-}
-
-//将Dictionary和Array转化为NSString
-- (NSString *)dictionaryOrArrayToJsonString:(id)dictOrArray
-{
-    NSData * data = [NSJSONSerialization dataWithJSONObject:dictOrArray options:NSJSONWritingPrettyPrinted error:nil];
-    NSString * jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    return jsonString;
 }
 
 @end

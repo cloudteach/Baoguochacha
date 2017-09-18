@@ -37,6 +37,4 @@ return I;
 
 #import <Masonry.h>
 
-#import "BGCCNetWorkManager.h"
-
 #endif /* Common_h */

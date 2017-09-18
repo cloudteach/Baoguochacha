@@ -7,13 +7,18 @@
 //
 
 #import "BGCCNetWorkManager.h"
-#import "SuperManager.h"
 
 @implementation BGCCNetWorkManager
 
++ (BGCCNetWorkManager *)manager
+{
+    Singleton(BGCCNetWorkManager, manager);
+    return manager;
+}
+
 - (void)getEMSWithParam:(NSDictionary *)param success:(RequestSuccessBlock)success failed:(RequestFailedBlock)failed
 {
-    [[SuperManager manager] methodGetRequestWithUrl:@"" withParam:param success:^(NSDictionary *result) {
+    [[SuperManager manager] methodGetRequestWithUrl:[NSString stringWithFormat:@"http://www.kuaidi100.com/query"] withParam:param success:^(NSDictionary *result) {
         success(result);
     } failed:^(NSError *error) {
         failed(error);
