@@ -61,6 +61,8 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SW, SH-64) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        UIView *vNoLine = [[UIView alloc] initWithFrame:CGRectZero];
+        [_tableView setTableFooterView:vNoLine];
         [self.view addSubview:_tableView];
     }
     return _tableView;

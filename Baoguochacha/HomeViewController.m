@@ -79,15 +79,26 @@
     [self.view addSubview:labelPackage];
     
     [self.view addSubview:self.tfPackageNumber];
-    _tfPackageNumber.frame = CGRectMake(lengthPerButton, labelPackage.bottom+20, SW-lengthPerButton, 30);
+    [_tfPackageNumber mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(lengthPerButton);
+        make.right.equalTo(self.view.mas_right).offset(-lengthPerButton);
+        make.top.equalTo(labelPackage.mas_bottom).offset(20);
+        make.height.mas_offset(30);
+    }];
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(16, _tfPackageNumber.bottom+30, SW-32, 30);
     button.backgroundColor = HEX_RGB(0x999999);
     [button setTitleColor:HEX_RGB(0xffffff) forState:UIControlStateNormal];
     [button setTitle:@"查询" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(searchPackage) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    [button mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(16);
+        make.right.equalTo(self.view.mas_right).offset(-16);
+        make.top.equalTo(_tfPackageNumber.mas_bottom).offset(20);
+        make.height.mas_offset(30);
+    }];
 }
 
 - (void)selectPackage:(UIButton *)sender
