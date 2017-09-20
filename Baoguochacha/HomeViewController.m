@@ -39,11 +39,11 @@ BOOL isLightDevice(){
                        @{@"packageName":@"圆通",@"packageEnName":@"yuantong"},
                        @{@"packageName":@"中通",@"packageEnName":@"zhongtong"},
                        @{@"packageName":@"韵达",@"packageEnName":@"yunda"},
-                       @{@"packageName":@"天天",@"packageEnName":@"tiantian"},
-                       @{@"packageName":@"汇通",@"packageEnName":@"huitongkuaidi"},
-                       @{@"packageName":@"全峰",@"packageEnName":@"quanfengkuaidi"},
+//                       @{@"packageName":@"天天",@"packageEnName":@"tiantian"},
+//                       @{@"packageName":@"汇通",@"packageEnName":@"huitongkuaidi"},
+//                       @{@"packageName":@"全峰",@"packageEnName":@"quanfengkuaidi"},
                        @{@"packageName":@"德邦",@"packageEnName":@"debangwuliu"},
-                       @{@"packageName":@"宅急送",@"packageEnName":@"zhaijisong"},
+                       @{@"packageName":@"宅急送",@"packageEnName":@"zhaijisong"}
                        ];
     // Do any additional setup after loading the view.
     
@@ -60,11 +60,12 @@ BOOL isLightDevice(){
     int countPerRow = 4;
     float header = 64 + 20 + 30 + 20;
     float distancePerRow = 10;
+    float buttontHeight = 30;
     float lengthPerButton = SW/9;
-    float totleHeight = arrPackage.count % countPerRow*(20+30);
+    float totleHeight = ((arrPackage.count-1) / countPerRow+1)*buttontHeight+((arrPackage.count-1) / countPerRow)*distancePerRow;
     for(int i=0;i<arrPackage.count;i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(lengthPerButton*(i%countPerRow*2+1), header + i/countPerRow*(distancePerRow+30), lengthPerButton, 30);
+        button.frame = CGRectMake(lengthPerButton*(i%countPerRow*2+1), header + i/countPerRow*(distancePerRow+buttontHeight), lengthPerButton, buttontHeight);
         button.backgroundColor = HEX_RGB(0x345678);
         [button setTitleColor:HEX_RGB(0xffffff) forState:UIControlStateNormal];
         [button setTitleColor:HEX_RGB(0x000000) forState:UIControlStateSelected];
@@ -85,7 +86,7 @@ BOOL isLightDevice(){
     }
     
     UILabel *labelPackage = [[UILabel alloc] init];
-    labelPackage.frame = CGRectMake(16, 64 + 20 + 30 + totleHeight, SW, 30);
+    labelPackage.frame = CGRectMake(16, 64 + 20 + 30 + 20 + totleHeight + 20, SW, 30);
     labelPackage.text = @"请输入单号";
     [self.view addSubview:labelPackage];
     
